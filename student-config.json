@@ -1,9 +1,9 @@
 {
   "course": "ENGSE203",
-  "studentId": "STUDENT-ID",
-  "studentName": "ชื่อ-นามสกุล",
-  "section": "SEC-X",
-  "githubUsername": "GITHUB-USERNAME",
-  "repositoryName": "engse203-student-labs-STUDENT-ID",
+  "studentId": "685432100624",
+  "studentName": "กฤตเมธ สินธใส",
+  "section": "SEC2",
+  "githubUsername": "Kirttamet",
+  "repositoryName": "engse203-student-labs-685432100624",
   "repositoryMode": "new-course"
 }
