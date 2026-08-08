@@ -1,0 +1,38 @@
+export const initialRequests = [
+  {
+    id: 'REQ-001',
+    requesterName: 'สมชาย ใจดี',
+    requestType: 'แจ้งซ่อม',
+    location: 'ห้องปฏิบัติการ 301',
+    details: 'เครื่องปรับอากาศไม่ทำงาน ต้องการช่างเข้าตรวจสอบด่วน',
+    priority: 'urgent',
+    status: 'pending',
+  },
+  {
+    id: 'REQ-002',
+    requesterName: 'พิมพ์ชนก แสงทอง',
+    requestType: 'ขอใช้ห้อง',
+    location: 'ห้องประชุม 205',
+    details: 'ขอใช้ห้องประชุมสำหรับกิจกรรมชมรมวิชาการวันเสาร์',
+    priority: 'normal',
+    status: 'in-progress',
+  },
+  {
+    id: 'REQ-003',
+    requesterName: 'ธนกร ศรีสุข',
+    requestType: 'ขอยืมอุปกรณ์',
+    location: 'อาคารเรียนรวม 2',
+    details: 'ขอยืมโปรเจกเตอร์และลำโพงสำหรับงานนำเสนอกลุ่ม',
+    priority: 'normal',
+    status: 'completed',
+  },
+  {
+    id: 'REQ-004',
+    requesterName: 'อรวรรณ พงษ์ไพร',
+    requestType: 'แจ้งซ่อม',
+    location: 'หอพักนักศึกษา อาคาร A',
+    details: 'ก๊อกน้ำในห้องน้ำรวมชั้น 3 รั่วตลอดเวลา ต้องการช่างซ่อมด่วน',
+    priority: 'urgent',
+    status: 'pending',
+  },
+];
