@@ -47,12 +47,12 @@ function DashboardPage() {
     total: requests.length,
     pending: requests.filter((request) => request.status === 'pending').length,
     inProgress: requests.filter((request) => request.status === 'in-progress').length,
-    completed: requests.filter((request) => request.status === 'in-progress').length,
-  }), []);
+    completed: requests.filter((request) => request.status === 'completed').length,
+  }), [requests]);
 
   const filteredRequests = statusFilter === 'all'
     ? requests
-    : requests.filter((request) => request.status === 'pending');
+    : requests.filter((request) => request.status === statusFilter);
 
   function handleRetry() {
     if (scenario) setSearchParams({});
@@ -61,7 +61,7 @@ function DashboardPage() {
 
   async function handleDelete(requestId) {
     try {
-      const nextRequests = deleteRequest(requestId);
+      const nextRequests = await deleteRequest(requestId);
       setRequests(nextRequests);
       setNotice(`ลบคำร้อง ${requestId} แล้ว`);
     } catch (error) {
