@@ -54,6 +54,11 @@ function DashboardPage() {
     ? requests
     : requests.filter((request) => request.status === statusFilter);
 
+  const visibleRequests = filteredRequests.filter((request) =>
+    request.requestType.toLowerCase().includes(searchText.toLowerCase())
+    || request.location.toLowerCase().includes(searchText.toLowerCase())
+  );
+
   function handleRetry() {
     if (scenario) setSearchParams({});
     else reload();
@@ -113,7 +118,7 @@ function DashboardPage() {
               onChange={(e) => setSearchText(e.target.value)}
             />
             {/* TODO B3: ส่ง onAcknowledge={handleAcknowledge} ให้ RequestList เพื่อให้การ์ด pending มีปุ่ม "รับเรื่อง" */}
-            <RequestList requests={filteredRequests} onDeleteRequest={handleDelete} />
+            <RequestList requests={visibleRequests} onDeleteRequest={handleDelete} />
           </section>
         </>
       )}
