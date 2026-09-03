@@ -74,6 +74,15 @@ function DashboardPage() {
     }
   }
 
+  async function handleAcknowledge(requestId) {
+    try {
+      const nextRequests = await updateRequestStatus(requestId, 'in-progress');
+      setRequests(nextRequests);
+      setNotice(`รับเรื่องคำร้อง ${requestId} แล้ว`);
+    } catch (error) {
+      setNotice(error instanceof Error ? error.message : 'รับเรื่องไม่สำเร็จ');
+    }
+  }
 
   async function handleReset() {
     if (!window.confirm('ต้องการคืนข้อมูลตัวอย่างเริ่มต้นหรือไม่?')) return;
@@ -117,10 +126,10 @@ function DashboardPage() {
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
             />
-            {/* TODO B3: ส่ง onAcknowledge={handleAcknowledge} ให้ RequestList เพื่อให้การ์ด pending มีปุ่ม "รับเรื่อง" */}
             <RequestList
               requests={visibleRequests}
               onDeleteRequest={handleDelete}
+              onAcknowledge={handleAcknowledge}
               emptyMessage={searchText ? 'ไม่พบคำร้องที่ตรงกับการค้นหา' : 'ไม่มีคำร้องที่ตรงกับตัวกรองนี้'}
             />
           </section>
