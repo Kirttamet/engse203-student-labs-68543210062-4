@@ -118,7 +118,11 @@ function DashboardPage() {
               onChange={(e) => setSearchText(e.target.value)}
             />
             {/* TODO B3: ส่ง onAcknowledge={handleAcknowledge} ให้ RequestList เพื่อให้การ์ด pending มีปุ่ม "รับเรื่อง" */}
-            <RequestList requests={visibleRequests} onDeleteRequest={handleDelete} />
+            <RequestList
+              requests={visibleRequests}
+              onDeleteRequest={handleDelete}
+              emptyMessage={searchText ? 'ไม่พบคำร้องที่ตรงกับการค้นหา' : 'ไม่มีคำร้องที่ตรงกับตัวกรองนี้'}
+            />
           </section>
         </>
       )}
