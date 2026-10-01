@@ -1,0 +1,16 @@
+{
+  "week": "week-06",
+  "title": "Express API Foundation",
+  "status": "submitted",
+  "sourceOrigin": "migrated-repository",
+  "originalRepoUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4",
+  "originalCommit": "45726da",
+  "pullRequestUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/pull/7",
+  "submissionTag": "lab-06-submission-v1",
+  "testStatus": "pass",
+  "notes": "Express API สำหรับ Lab 06 และมี API test evidence",
+  "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-06/",
+  "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-06/labs/week-06/source",
+  "hasPublish": false,
+  "sourceEntries": 8
+}

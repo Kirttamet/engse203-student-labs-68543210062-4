@@ -78,5 +78,53 @@
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-05/labs/week-05/source",
     "hasPublish": true,
     "sourceEntries": 10
+  },
+  {
+    "week": "week-06",
+    "title": "Express API Foundation",
+    "status": "submitted",
+    "sourceOrigin": "migrated-repository",
+    "originalRepoUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4",
+    "originalCommit": "45726da",
+    "pullRequestUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/pull/7",
+    "submissionTag": "lab-06-submission-v1",
+    "testStatus": "pass",
+    "notes": "Express API สำหรับ Lab 06 และมี API test evidence",
+    "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-06/",
+    "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-06/labs/week-06/source",
+    "hasPublish": false,
+    "sourceEntries": 8
+  },
+  {
+    "week": "week-07",
+    "title": "RESTful API, Validation & Error Handling",
+    "status": "submitted",
+    "sourceOrigin": "migrated-repository",
+    "originalRepoUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4",
+    "originalCommit": "d590a76",
+    "pullRequestUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/pull/9",
+    "submissionTag": "lab-07-submission-v1",
+    "testStatus": "pass",
+    "notes": "เชื่อมต่อ React frontend กับ Express backend และมี API test evidence",
+    "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-07/",
+    "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-07/labs/week-07/source",
+    "hasPublish": true,
+    "sourceEntries": 5
+  },
+  {
+    "week": "week-09",
+    "title": "sql-fundamentals",
+    "status": "submitted",
+    "sourceOrigin": "migrated-repository",
+    "originalRepoUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4",
+    "originalCommit": "bbbdb05",
+    "pullRequestUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/pull/10",
+    "submissionTag": "lab-09-submission-v1",
+    "testStatus": "pass",
+    "notes": "SQLite database, SQL queries, relational data model and constraint evidence",
+    "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-09/",
+    "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-09/labs/week-09/source",
+    "hasPublish": false,
+    "sourceEntries": 6
   }
 ]

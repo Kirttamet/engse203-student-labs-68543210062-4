@@ -1,0 +1,16 @@
+{
+  "week": "week-09",
+  "title": "sql-fundamentals",
+  "status": "submitted",
+  "sourceOrigin": "migrated-repository",
+  "originalRepoUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4",
+  "originalCommit": "bbbdb05",
+  "pullRequestUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/pull/10",
+  "submissionTag": "lab-09-submission-v1",
+  "testStatus": "pass",
+  "notes": "SQLite database, SQL queries, relational data model and constraint evidence",
+  "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-09/",
+  "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-09/labs/week-09/source",
+  "hasPublish": false,
+  "sourceEntries": 6
+}
