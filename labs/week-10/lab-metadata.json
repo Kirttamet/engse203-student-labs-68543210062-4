@@ -1,0 +1,12 @@
+{
+  "week": "week-10",
+  "title": "Node.js & SQLite",
+  "status": "ready",
+  "sourceOrigin": "course-starter",
+  "originalRepoUrl": "",
+  "originalCommit": "",
+  "pullRequestUrl": "",
+  "submissionTag": "",
+  "testStatus": "pass",
+  "notes": "ผ่านข้อบังคับและเตรียม Pages report ในเครื่องแล้ว ยังไม่ commit/push/PR/tag; ไม่ได้ deploy backend จริง"
+}
