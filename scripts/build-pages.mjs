@@ -1,14 +1,34 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { ROOT, escapeHtml, exists, listLabs, meaningfulEntries, readJson, validHttpUrl } from "./common.mjs";
+import { randomUUID } from "node:crypto";
+import { ROOT, escapeHtml, exists, listLabs, meaningfulEntries, readJson, validHttpUrl, normalizeWeek } from "./common.mjs";
 
 const config = await readJson(path.join(ROOT, "student-config.json"));
-const labs = await listLabs();
-const docsRoot = path.join(ROOT, "docs");
+const args = process.argv.slice(2);
+const weekFlag = args.indexOf('--week');
+const selectedWeek = weekFlag >= 0 ? normalizeWeek(args[weekFlag + 1]) : '';
+const labs = [];
+const metadataByWeek = new Map();
+// Read inputs before touching output. An unfinished future LAB is not a submission.
+for (const week of await listLabs()) {
+  const metadataPath = path.join(ROOT, 'labs', week, 'lab-metadata.json');
+  if (!(await exists(metadataPath))) {
+    console.warn('SKIP ' + week + ': no lab-metadata.json (not registered yet)');
+    continue;
+  }
+  const metadata = await readJson(metadataPath);
+  if (metadata.week !== week) throw new Error(week + ': metadata.week does not match folder');
+  metadataByWeek.set(week, metadata);
+  labs.push(week);
+}
+if (selectedWeek && !metadataByWeek.has(selectedWeek)) throw new Error(selectedWeek + ': no registered LAB');
+const finalDocsRoot = path.join(ROOT, 'docs');
+// Both directories are fixed children of this repository; never remove docs before a successful build.
+const docsRoot = path.join(ROOT, '.pages-build-' + randomUUID());
 const repoUrl = `https://github.com/${config.githubUsername}/${config.repositoryName}`;
 const pagesBase = `https://${config.githubUsername}.github.io/${config.repositoryName}`;
 
-await fs.rm(docsRoot, { recursive: true, force: true });
+
 await fs.mkdir(path.join(docsRoot, "labs"), { recursive: true });
 await fs.writeFile(path.join(docsRoot, ".nojekyll"), "", "utf8");
 
@@ -26,11 +46,15 @@ for (const week of labs) {
   const labRoot = path.join(ROOT, "labs", week);
   const publishRoot = path.join(labRoot, "publish");
   const target = path.join(docsRoot, "labs", week);
-  const metadata = await readJson(path.join(labRoot, "lab-metadata.json"));
+  const metadata = metadataByWeek.get(week);
   const hasPublish = await exists(path.join(publishRoot, "index.html"));
   await fs.mkdir(target, { recursive: true });
 
-  if (hasPublish) {
+  const previousTarget = path.join(finalDocsRoot, 'labs', week);
+  const preserveExisting = selectedWeek && selectedWeek !== week && await exists(previousTarget);
+  if (preserveExisting) {
+    await fs.cp(previousTarget, target, { recursive: true });
+  } else if (hasPublish) {
     await fs.cp(publishRoot, target, { recursive: true });
   } else {
     const sourceUrl = `${repoUrl}/tree/lab/${week}/labs/${week}/source`;
@@ -54,7 +78,7 @@ for (const week of labs) {
   const sourceCount = (await meaningfulEntries(path.join(labRoot, "source"))).length;
   const summary = { ...metadata, pageUrl, sourceUrl, hasPublish, sourceEntries: sourceCount };
   summaries.push(summary);
-  await fs.writeFile(path.join(target, "submission.json"), `${JSON.stringify(summary, null, 2)}\n`, "utf8");
+  if (!preserveExisting) await fs.writeFile(path.join(target, "submission.json"), `${JSON.stringify(summary, null, 2)}\n`, "utf8");
 
   cards.push(`<article class="lab-card" data-status="${escapeHtml(metadata.status)}">
     <div class="card-top"><span class="week">${escapeHtml(week)}</span><span class="status">${escapeHtml(statusLabels[metadata.status] ?? metadata.status)}</span></div>
@@ -75,6 +99,20 @@ const dashboard = `<!doctype html>
 await fs.writeFile(path.join(docsRoot, "index.html"), dashboard, "utf8");
 await fs.writeFile(path.join(docsRoot, "labs.json"), `${JSON.stringify(summaries, null, 2)}\n`, "utf8");
 
+// Publish only after all pages have been generated. Keep the previous tree recoverable.
+const previousDocsRoot = path.join(ROOT, '.pages-previous-' + randomUUID());
+const hadDocs = await exists(finalDocsRoot);
+if (hadDocs) await fs.rename(finalDocsRoot, previousDocsRoot);
+try {
+  await fs.rename(docsRoot, finalDocsRoot);
+} catch (error) {
+  if (hadDocs) await fs.rename(previousDocsRoot, finalDocsRoot);
+  throw error;
+}
+if (hadDocs) {
+  try { await fs.rm(previousDocsRoot, { recursive: true, force: true }); }
+  catch { console.warn('Previous build retained at ' + previousDocsRoot); }
+}
 console.log(`Build Pages Hub: PASS — ${labs.length} LAB(s)`);
-console.log(`Output: ${path.relative(ROOT, docsRoot)}/`);
+console.log(`Output: ${path.relative(ROOT, finalDocsRoot)}/`);
 console.log(`Preview: ${pagesBase}/`);

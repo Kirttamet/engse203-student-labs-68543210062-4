@@ -1,0 +1,36 @@
+
+> engse203-week06-campus-api@2.0.0 test
+> node scripts/run-tests.mjs
+
+GET /api/requests 200 2.393 ms - 1662
+▶ GET /api/requests
+  ✔ คืน array จากฐานข้อมูล พร้อม 200 (25.0882ms)
+GET /api/requests 200 0.476 ms - 1662
+  ✔ คืน requesterName ไม่ใช่ requester_id (5.805ms)
+GET /api/requests?status=pending 200 0.387 ms - 955
+  ✔ กรอง ?status= ทำงาน (4.3399ms)
+✔ GET /api/requests (36.4166ms)
+GET /api/requests/REQ-001 200 0.771 ms - 321
+▶ GET /api/requests/:id
+  ✔ พบ → 200 (5.7131ms)
+GET /api/requests/REQ-999 404 0.406 ms - 65
+  ✔ ไม่พบ → 404 (5.1971ms)
+✔ GET /api/requests/:id (11.2986ms)
+POST /api/requests 201 9.029 ms - 263
+▶ POST /api/requests
+  ✔ ข้อมูลถูกต้อง → 201 · แปลงชื่อเป็น id (13.3648ms)
+POST /api/requests 400 0.467 ms - 514
+  ✔ ข้อมูลไม่ครบ → 400 (4.8283ms)
+✔ POST /api/requests (18.665ms)
+GET /api/requests?status=x%27%20OR%20%271%27%3D%271 200 0.339 ms - 2
+▶ ความปลอดภัย
+  ✔ SQL injection ผ่าน ?status= ไม่หลุด (4.347ms)
+✔ ความปลอดภัย (5.0032ms)
+ℹ tests 8
+ℹ suites 4
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 343.5214
