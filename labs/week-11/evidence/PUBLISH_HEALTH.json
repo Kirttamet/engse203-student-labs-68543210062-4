@@ -1,0 +1,10 @@
+{
+  "url": "https://campus-service-68543210062-4.onrender.com/",
+  "httpStatus": 200,
+  "healthEndpoint": "/api/health",
+  "status": "ok",
+  "environment": "production",
+  "databaseConnected": true,
+  "driver": "sqlite",
+  "sourceChanged": false
+}
