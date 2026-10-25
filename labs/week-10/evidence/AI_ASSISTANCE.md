@@ -1,7 +1,7 @@
 # References & AI Assistance
 
-Source: course starter และคู่มือใน C:/GG/PP/engse203-lab (อาจารย์)
-AI tool: OpenAI Codex
-Used for: ตรวจโจทย์เทียบงานเดิม แก้โค้ด เขียน/รัน test และสร้าง Pages ตามโครง repository
-ส่วนที่ปรับโดย AI ในรอบนี้อธิบายใน LAB_COMPLETION_REPORT.md ที่ root
-นักศึกษายังต้องอ่านโค้ด อธิบายด้วยตนเอง และเขียน reflection ตามความเข้าใจจริง ไม่ได้สร้างประวัติ commit, PR, tag หรือหลักฐานการสาธิตที่ไม่ได้เกิดขึ้น
+**AI Tool:** OpenAI Codex
+
+**Used for:** ใช้เป็นเพียงผู้ช่วยวิเคราะห์โจทย์ เปรียบเทียบข้อกำหนดกับงานเดิม ตรวจสอบโครงสร้างโค้ด และให้คำแนะนำเกี่ยวกับ Test, Bug และ GitHub Pages
+
+**Verification:** นักศึกษาเป็นผู้ตรวจสอบ แก้ไข ทดสอบ และอธิบายโค้ดด้วยตนเอง พร้อมเขียน Reflection ตามความเข้าใจจริง โดยมีรายละเอียดใน `LAB_COMPLETION_REPORT.md` และไม่มีการสร้างหลักฐาน Commit, PR, Tag หรือการสาธิตที่ไม่ได้เกิดขึ้นจริง
