@@ -11,6 +11,7 @@
     "testStatus": "pass",
     "notes": "LAB 1 ใช้ evidence report ได้โดยไม่ต้องมี web application",
     "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-01/",
+    "resultUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-01/",
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-01/labs/week-01/source",
     "hasPublish": false,
     "sourceEntries": 6
@@ -27,6 +28,7 @@
     "testStatus": "pass",
     "notes": "นำ Vite build output ที่มี index.html เข้า publish/",
     "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-02/",
+    "resultUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-02/",
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-02/labs/week-02/source",
     "hasPublish": true,
     "sourceEntries": 10
@@ -43,6 +45,7 @@
     "testStatus": "pass",
     "notes": "Static site ต้องมี index.html ที่ publish root",
     "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-03/",
+    "resultUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-03/",
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-03/labs/week-03/source",
     "hasPublish": true,
     "sourceEntries": 8
@@ -59,6 +62,7 @@
     "testStatus": "pass",
     "notes": "React/Vite build output ต้องอยู่ใน publish/ ก่อนสร้าง Pages Hub",
     "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-04/",
+    "resultUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-04/",
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-04/labs/week-04/source",
     "hasPublish": true,
     "sourceEntries": 12
@@ -75,6 +79,7 @@
     "testStatus": "pass",
     "notes": "React/Vite build output ต้องอยู่ใน publish/ ก่อนสร้าง Pages Hub",
     "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-05/",
+    "resultUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-05/",
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-05/labs/week-05/source",
     "hasPublish": true,
     "sourceEntries": 11
@@ -91,6 +96,7 @@
     "testStatus": "pass",
     "notes": "Express API สำหรับ Lab 06 และมี API test evidence",
     "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-06/",
+    "resultUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-06/",
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-06/labs/week-06/source",
     "hasPublish": false,
     "sourceEntries": 8
@@ -107,6 +113,7 @@
     "testStatus": "pass",
     "notes": "เชื่อมต่อ React frontend กับ Express backend และมี API test evidence",
     "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-07/",
+    "resultUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-07/",
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-07/labs/week-07/source",
     "hasPublish": true,
     "sourceEntries": 5
@@ -123,6 +130,7 @@
     "testStatus": "pass",
     "notes": "SQLite database, SQL queries, relational data model and constraint evidence",
     "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-09/",
+    "resultUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-09/",
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-09/labs/week-09/source",
     "hasPublish": false,
     "sourceEntries": 6
@@ -139,6 +147,7 @@
     "testStatus": "pass",
     "notes": "PR #12 merge แล้ว; tag lab-10-submission-v1 ชี้ merge commit แล้ว; รอบนี้แก้ metadata และ Pages ที่ยังไม่รวมใน tag เดิม ยังไม่ deploy backend จริง",
     "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-10/",
+    "resultUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-10/",
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-10/labs/week-10/source",
     "hasPublish": true,
     "sourceEntries": 13
@@ -155,6 +164,7 @@
     "testStatus": "pass",
     "notes": "ชุดในเครื่องผ่าน checker 22/22; เปิด PR #13 แล้วและยังไม่ merge; tag lab-12-submission-v1 เป็นชื่อที่เตรียมไว้ ยังไม่ได้สร้าง; ยังไม่ deploy backend",
     "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-12/",
+    "resultUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-12/",
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-12/labs/week-12/source",
     "hasPublish": true,
     "sourceEntries": 17
@@ -162,15 +172,17 @@
   {
     "week": "week-13",
     "title": "Quality & Security",
-    "status": "ready",
+    "status": "submitted",
     "sourceOrigin": "course-starter",
     "originalRepoUrl": "",
     "originalCommit": "",
-    "pullRequestUrl": "",
+    "pullRequestUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/pull/15",
     "submissionTag": "lab-13-submission-v1",
     "testStatus": "pass",
-    "notes": "Checker 27/27; API 71 tests + frontend 6; coverage 87.5%; Week12 regression 20/20; production audit 0; ยังไม่ commit/push/PR/tag หรือ deploy จริง",
+    "notes": "Checker 27/27; API 71 tests; frontend 6 tests; coverage 87.5%; PR #15 merged; Render health ผ่าน",
+    "deployedUrl": "https://engse203-student-labs-68543210062-4.onrender.com/",
     "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-13/",
+    "resultUrl": "https://engse203-student-labs-68543210062-4.onrender.com/",
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-13/labs/week-13/source",
     "hasPublish": true,
     "sourceEntries": 19
