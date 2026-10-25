@@ -1,0 +1,39 @@
+
+> engse203-campus-api@3.1.0 coverage
+> vitest run --coverage
+
+
+ RUN  v5.0.3 C:/Users/oommy/Desktop/projet 20 for ai/lab12-work/source/api
+      Coverage enabled with v8
+
+
+ Test Files  3 passed (3)
+      Tests  44 passed (44)
+   Start at  23:42:12
+   Duration  654ms (import 46%, tests 24%, transform 21%, worker 9%)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |    85.9 |    74.71 |   77.14 |   87.41 |                   
+ src               |   72.72 |    61.11 |      25 |   76.19 |                   
+  app.js           |   68.42 |     37.5 |      25 |   72.22 | 28,37-40,45       
+  config.js        |     100 |       80 |     100 |     100 | 17,27             
+ src/controllers   |     100 |       90 |     100 |     100 |                   
+  ...Controller.js |     100 |       90 |     100 |     100 | 25                
+ src/middleware    |   44.44 |    46.15 |    37.5 |   47.05 |                   
+  errorHandler.js  |   44.44 |    36.36 |      40 |      50 | 6-16,30           
+  logger.js        |       0 |      100 |       0 |       0 | 3-8               
+ src/routes        |     100 |       50 |     100 |     100 |                   
+  healthRoutes.js  |     100 |       50 |     100 |     100 | 18-19             
+ src/services      |   90.56 |       80 |     100 |   91.83 |                   
+  ...estService.js |   90.56 |       80 |     100 |   91.83 | 40-42,85          
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 85.9% ( 128/149 )
+Branches     : 74.71% ( 65/87 )
+Functions    : 77.14% ( 27/35 )
+Lines        : 87.41% ( 125/143 )
+================================================================================

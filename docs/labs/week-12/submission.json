@@ -1,0 +1,16 @@
+{
+  "week": "week-12",
+  "title": "Testing & Debugging",
+  "status": "ready",
+  "sourceOrigin": "course-starter",
+  "originalRepoUrl": "",
+  "originalCommit": "",
+  "pullRequestUrl": "",
+  "submissionTag": "lab-12-submission-v1",
+  "testStatus": "pass",
+  "notes": "Checker 22/22; API 44 และ frontend 2 tests; coverage 85.9%; ยังไม่สร้าง PR/tag ไม่ commit/push และยังไม่ deploy backend",
+  "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-12/",
+  "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-12/labs/week-12/source",
+  "hasPublish": true,
+  "sourceEntries": 17
+}

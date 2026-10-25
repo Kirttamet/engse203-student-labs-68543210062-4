@@ -1,0 +1,42 @@
+
+> engse203-week05-campus-service-request@0.3.0 test
+> vitest run
+
+
+ RUN  v5.0.3 C:/Users/oommy/Desktop/projet 20 for ai/lab12-work/source/frontend
+
+ ❯ src/utils/requestSummary.test.js (2 tests | 1 failed) 10ms
+   × API status in-progress contributes to dashboard summary 8ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/utils/requestSummary.test.js > API status in-progress contributes to dashboard summary
+AssertionError: expected { total: 3, pending: 1, …(2) } to deeply equal { total: 3, pending: 1, …(2) }
+
+- Expected
++ Received
+
+  {
+    "completed": 1,
+-   "inProgress": 1,
++   "inProgress": 0,
+    "pending": 1,
+    "total": 3,
+  }
+
+ ❯ src/utils/requestSummary.test.js:4:95
+      2| import { summarizeRequests } from './requestSummary.js';
+      3| test('API status in-progress contributes to dashboard summary', () => {
+      4|   expect(summarizeRequests([{status:'pending'},{status:'in-progress'},…
+       |                                                                                               ^
+      5| });
+      6| test('empty dashboard summary', () => { expect(summarizeRequests([])).…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  23:38:21
+   Duration  442ms (import 42%, transform 37%, tests 13%, worker 8%)
+

@@ -1,0 +1,114 @@
+
+> engse203-campus-api@3.1.0 test
+> vitest run
+
+
+ RUN  v5.0.3 C:/Users/oommy/Desktop/projet 20 for ai/lab12-work/source/api
+
+ ❯ tests/unit/requestValidator.test.js (21 tests | 1 failed) 15ms
+   ❯ request boundaries (21)
+     × valid minimum accepted 10ms
+stderr | tests/integration/requests.api.test.js > POST /api/requests > ลบรายการกลาง แล้วเพิ่มใหม่ → 201 และรหัสไม่ซ้ำของเดิม
+เกิดข้อผิดพลาดภายใน: Error: UNIQUE constraint failed: requests.id
+    at Module.create (C:/Users/oommy/Desktop/projet 20 for ai/lab12-work/source/api/src/services/requestService.js:127:7)
+    at createRequest (C:/Users/oommy/Desktop/projet 20 for ai/lab12-work/source/api/src/controllers/requestController.js:20:27)
+    at Layer.handleRequest (C:\Users\oommy\Desktop\projet 20 for ai\lab12-work\source\api\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\oommy\Desktop\projet 20 for ai\lab12-work\source\api\node_modules\router\lib\route.js:157:13)
+    at validateRequest (C:/Users/oommy/Desktop/projet 20 for ai/lab12-work/source/api/src/middleware/validateRequest.js:12:3)
+    at Layer.handleRequest (C:\Users\oommy\Desktop\projet 20 for ai\lab12-work\source\api\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\oommy\Desktop\projet 20 for ai\lab12-work\source\api\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\oommy\Desktop\projet 20 for ai\lab12-work\source\api\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\oommy\Desktop\projet 20 for ai\lab12-work\source\api\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\oommy\Desktop\projet 20 for ai\lab12-work\source\api\node_modules\router\lib\layer.js:152:17)
+
+stderr | tests/integration/requests.api.test.js > PUT /api/requests/:id > คำร้องที่ไม่มีอยู่ → 404 (ไม่ใช่ 500)
+เกิดข้อผิดพลาดภายใน: TypeError: Cannot read properties of null (reading 'id')
+    at updateRequestStatus (C:/Users/oommy/Desktop/projet 20 for ai/lab12-work/source/api/src/controllers/requestController.js:30:35)
+    at Layer.handleRequest (C:\Users\oommy\Desktop\projet 20 for ai\lab12-work\source\api\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\oommy\Desktop\projet 20 for ai\lab12-work\source\api\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\oommy\Desktop\projet 20 for ai\lab12-work\source\api\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\oommy\Desktop\projet 20 for ai\lab12-work\source\api\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\oommy\Desktop\projet 20 for ai\lab12-work\source\api\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\oommy\Desktop\projet 20 for ai\lab12-work\source\api\node_modules\router\index.js:295:15
+    at param (C:\Users\oommy\Desktop\projet 20 for ai\lab12-work\source\api\node_modules\router\index.js:600:14)
+    at param (C:\Users\oommy\Desktop\projet 20 for ai\lab12-work\source\api\node_modules\router\index.js:610:14)
+    at processParams (C:\Users\oommy\Desktop\projet 20 for ai\lab12-work\source\api\node_modules\router\index.js:664:3)
+
+ ❯ tests/integration/requests.api.test.js (19 tests | 2 failed) 335ms
+   ❯ POST /api/requests (3)
+     × ลบรายการกลาง แล้วเพิ่มใหม่ → 201 และรหัสไม่ซ้ำของเดิม 19ms
+   ❯ PUT /api/requests/:id (3)
+     × คำร้องที่ไม่มีอยู่ → 404 (ไม่ใช่ 500) 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/requests.api.test.js > POST /api/requests > ลบรายการกลาง แล้วเพิ่มใหม่ → 201 และรหัสไม่ซ้ำของเดิม
+AssertionError: expected 500 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 500
+
+ ❯ tests/integration/requests.api.test.js:71:22
+     69|     await request(app).delete('/api/requests/REQ-002').expect(204);
+     70|     const r = await request(app).post('/api/requests').send(valid);
+     71|     expect(r.status).toBe(201);
+       |                      ^
+     72|     const ids = (await request(app).get('/api/requests')).body.map((x)…
+     73|     expect(new Set(ids).size).toBe(ids.length);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/integration/requests.api.test.js > PUT /api/requests/:id > คำร้องที่ไม่มีอยู่ → 404 (ไม่ใช่ 500)
+AssertionError: expected 500 to be 404 // Object.is equality
+
+- Expected
++ Received
+
+- 404
++ 500
+
+ ❯ tests/integration/requests.api.test.js:90:22
+     88|   test('คำร้องที่ไม่มีอยู่ → 404 (ไม่ใช่ 500)', async () => {
+     89|     const r = await request(app).put('/api/requests/REQ-999').send({ s…
+     90|     expect(r.status).toBe(404);
+       |                      ^
+     91|   });
+     92| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/unit/requestValidator.test.js > request boundaries > valid minimum accepted
+AssertionError: expected [ Array(1) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "รายละเอียดต้องมีอย่างน้อย 10 ตัวอักษร",
++ ]
+
+ ❯ tests/unit/requestValidator.test.js:5:72
+      3| const valid = {requesterName:'AB',requestType:'แจ้งซ่อม',location:'C3'…
+      4| describe('request boundaries', () => {
+      5|  test('valid minimum accepted',()=>expect(validateRequestInput(valid))…
+       |                                                                        ^
+      6|  test.each([null, undefined, [], 'text', 42])('invalid body %j', body=…
+      7|  test.each(['', ' ', 'A'])('short name %j',value=>expect(validateReque…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  2 failed | 1 passed (3)
+      Tests  3 failed | 41 passed (44)
+   Start at  23:38:12
+   Duration  5.46s (import 84%, tests 7%, transform 6%, worker 2%)
+
+npm notice
+npm notice New major version of npm available! 11.19.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
