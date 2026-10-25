@@ -1,0 +1,42 @@
+# LAB12 — Testing and Debugging
+
+Campus Service Request เป็น React frontend → Express API → SQLite. งานนี้เริ่มจาก starter Week12 ของอาจารย์ ไม่เปลี่ยน source ของ LAB ก่อนหน้า
+
+## ติดตั้งและรัน
+
+Node >=22.13 (ทดสอบบน Node 24). จาก source/:
+
+```bash
+npm ci --prefix api
+npm ci --prefix frontend
+npm run db:setup --prefix api
+cp api/.env.example api/.env
+npm run dev --prefix api
+# อีก terminal
+npm run dev --prefix frontend
+```
+
+API พอร์ต 3001, frontend พอร์ต 5173. api/.env เป็นไฟล์เฉพาะเครื่อง ห้ามนำขึ้น Git. campus.db ต้องเริ่มจากข้อมูล seed 5 คำร้องตามโจทย์
+
+## ทดสอบ
+
+```bash
+npm test --prefix api
+npm test --prefix frontend
+npm run coverage --prefix api
+npm run build --prefix frontend
+node --disable-warning=ExperimentalWarning check-week12.mjs --inclass
+node --disable-warning=ExperimentalWarning check-week12.mjs
+```
+
+Unit tests ครอบคลุมชนิดข้อมูล ค่า enum และค่าขอบ. Integration tests ยิงผ่าน route/controller/service ไป SQLite จริง โดย vitest.config.js ตั้ง DB_FILE=:memory: และ loadSeed ใหม่ทุก test. Regression tests เก็บ 4 bug ตาม DEBUG_LOG.md. ผลก่อนและหลังแก้อยู่ ../evidence/. ไม่ใช้ campus.db ของ LAB อื่น
+
+## Pages และการส่งงาน
+
+source/ เก็บโค้ด; evidence/ เก็บผลจริง; publish/ เป็นรายงาน static สำหรับ GitHub Pages. Express/SQLite ไม่สามารถรันบน GitHub Pages ได้ จึงต้องใช้ npm run dev หรือ Node host เพื่อใช้งาน full-stack. เปิด PR #13 แล้ว แต่ยังไม่ deploy URL จริงหรือสร้าง tag
+
+PR #14 ซ่อม Pages builder และ merge เข้า main แล้ว. ใช้ npm run build:pages -- --week week-12 เพื่อสร้าง Hub และหน้า LAB12 โดยรักษาหน้า LAB อื่นไว้. Week11 ที่ยังไม่มี metadata จะถูกข้าม
+
+## References & AI Assistance
+
+อ้างอิง engse203-lab/labs/week-12-testing-debugging/lab12/starter และคู่มืออาจารย์. OpenAI Codex ช่วยออกแบบกรณีทดสอบ วิเคราะห์ stack trace แก้ 4 bug และตรวจผล. นักศึกษาต้องอ่านโค้ดและเขียน reflection จากความเข้าใจจริง ยังไม่อ้างว่าได้เปิด breakpoint, บันทึกวิดีโอ หรือส่งงานแล้ว

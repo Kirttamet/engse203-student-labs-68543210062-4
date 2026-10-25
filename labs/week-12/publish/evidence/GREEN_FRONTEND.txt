@@ -1,0 +1,13 @@
+
+> engse203-week05-campus-service-request@0.3.0 test
+> vitest run
+
+
+ RUN  v5.0.3 C:/Users/oommy/Desktop/projet 20 for ai/lab12-work/source/frontend
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  23:42:10
+   Duration  166ms (transform 50%, import 35%, worker 9%, tests 6%)
+
