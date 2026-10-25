@@ -1,0 +1,15 @@
+
+> engse203-campus-api@3.2.0 db:setup
+> node --disable-warning=ExperimentalWarning scripts/setup-db.mjs
+
+
+  ฐานข้อมูล : C:\Users\oommy\Desktop\projet 20 for ai\lab13-work\source\api\data\campus.db
+  schema    : C:\Users\oommy\Desktop\projet 20 for ai\lab13-work\source\api\data\schema.sql
+
+  ✓ สร้างฐานข้อมูลสำเร็จ
+
+    requests       5 แถว
+    users          5 แถว
+
+  ✓ Foreign Key: requests.requester_id → users.id
+

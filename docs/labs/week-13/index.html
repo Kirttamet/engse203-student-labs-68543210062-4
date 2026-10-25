@@ -1,0 +1,59 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LAB13 — Quality & Security</title><style>*{box-sizing:border-box}body{margin:0;color:#17324d;background:#edf3f8;font:16px/1.7 system-ui,sans-serif}main{max-width:1000px;margin:30px auto;padding:24px;background:white;border-radius:14px}a{color:#075b9c}.result{color:#146a3c;font-size:1.4rem}.note{padding:14px;background:#fff4dc}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f1f5f8;padding:16px;font:14px/1.6 monospace}img{max-width:100%;height:auto}h1{font-size:clamp(1.5rem,4vw,2.2rem)}</style></head><body><main><a href="../../index.html">← LAB Portfolio</a><h1>LAB13 — Quality & Security</h1><p>ENGSE203 · 68543210062-4</p><p class="result">Checker 27/27 · API 71 tests · Frontend 6 tests · Coverage 87.5%</p><p>Validation · scrypt · JWT login · 401/403 · fail-fast secret · rate limit · security headers</p><p class="note">หน้านี้เป็นรายงาน static สำหรับ GitHub Pages. ระบบ Express/SQLite ทดสอบในเครื่องแล้ว แต่ยังไม่ได้ deploy Render หรือสร้าง PR/tag จริง</p><h2>หลักฐานทดสอบ</h2><ul><li><a href="evidence/AI_ASSISTANCE.md">AI_ASSISTANCE.md</a></li><li><a href="evidence/AUDIT_API.json">AUDIT_API.json</a></li><li><a href="evidence/AUDIT_FRONTEND.json">AUDIT_FRONTEND.json</a></li><li><a href="evidence/BROWSER_TEST.md">BROWSER_TEST.md</a></li><li><a href="evidence/BUILD.txt">BUILD.txt</a></li><li><a href="evidence/CHECKER.txt">CHECKER.txt</a></li><li><a href="evidence/COVERAGE.txt">COVERAGE.txt</a></li><li><a href="evidence/DB_SETUP.txt">DB_SETUP.txt</a></li><li><a href="evidence/GREEN_API.txt">GREEN_API.txt</a></li><li><a href="evidence/GREEN_FRONTEND.txt">GREEN_FRONTEND.txt</a></li><li><a href="evidence/production-login.png">production-login.png</a></li><li><a href="evidence/RED_API.txt">RED_API.txt</a></li><li><a href="evidence/REFLECTION_PROMPTS.md">REFLECTION_PROMPTS.md</a></li><li><a href="evidence/REGRESSION_WEEK12.txt">REGRESSION_WEEK12.txt</a></li><li><a href="evidence/TEST_REPORT.md">TEST_REPORT.md</a></li></ul><h2>หน้าเว็บ production ในเครื่อง</h2><img src="evidence/production-login.png" alt="LAB13 เข้าสู่ระบบเจ้าหน้าที่สำเร็จบน localhost"><details><summary>ผล checker อาจารย์</summary><pre>POST /api/requests 413 3.342 ms - 448
+POST /api/auth/login 200 39.716 ms - 375
+POST /api/auth/login 401 31.477 ms - 93
+POST /api/auth/login 401 0.329 ms - 93
+POST /api/auth/login 401 0.374 ms - 93
+PUT /api/requests/REQ-001 401 0.543 ms - 60
+PUT /api/requests/REQ-001 401 0.943 ms - 81
+PUT /api/requests/REQ-001 403 0.571 ms - 78
+PUT /api/requests/REQ-001 200 0.754 ms - 323
+DELETE /api/requests/REQ-003 204 0.449 ms - -
+GET /api/requests 200 0.380 ms - 1662
+POST /api/requests 201 0.623 ms - 260
+DELETE /api/requests/REQ-002 204 0.338 ms - -
+POST /api/requests 201 0.444 ms - 260
+GET /api/health 200 0.294 ms - 139
+POST /api/auth/login 401 30.570 ms - 93
+POST /api/auth/login 401 30.893 ms - 93
+POST /api/auth/login 401 30.493 ms - 93
+POST /api/auth/login 401 33.122 ms - 93
+POST /api/auth/login 401 30.284 ms - 93
+POST /api/auth/login 429 0.239 ms - 137
+
+✅ CP48 ชื่อผู้แจ้ง 100 ตัวผ่าน · 101 ตัวถูกปฏิเสธ
+✅ CP48 รายละเอียด 1000 ตัวผ่าน · 1001 ตัวถูกปฏิเสธ
+✅ CP48 สถานที่ยาวเกิน 100 ตัวถูกปฏิเสธ
+✅ CP49 hashPassword คืนรูปแบบ scrypt$salt$hash
+✅ CP49 รหัสผ่านเดียวกันได้ hash ต่างกัน (salt สุ่ม) และไม่มีรหัสผ่านจริงปน
+✅ CP49 verifyPassword: ถูก → true · ผิด → false
+✅ CP49 ตรวจ hash บัญชีเจ้าหน้าที่ใน schema.sql ได้
+✅ CP49 ตาราง users มีคอลัมน์ role และ password_hash
+✅ CP48 body ใหญ่เกิน 10kb → 413 เป็น JSON
+✅ CP50 POST /api/auth/login ถูกต้อง → 200 พร้อม token (3 ส่วน)
+✅ CP50 payload ของ token มี role=staff และ exp · ไม่มีรหัสผ่าน
+✅ CP50 รหัสผ่านผิด กับ อีเมลที่ไม่มี → 401 ข้อความเดียวกัน
+✅ CP50 ผู้แจ้งทั่วไป (ไม่มีรหัสผ่าน) เข้าสู่ระบบไม่ได้
+✅ CP51 PUT ไม่มี token → 401
+✅ CP51 PUT ด้วย token ปลอม (secret อื่น) → 401
+✅ CP51 PUT ด้วย token ที่ไม่ใช่เจ้าหน้าที่ → 403
+✅ CP51 เจ้าหน้าที่: PUT → 200 และ DELETE → 204
+✅ CP51 GET และ POST ยังไม่ต้องเข้าสู่ระบบ
+✅ CP51 ไม่ถอยหลัง · BUG #1 ของสัปดาห์ 12 ยังแก้อยู่ (ลบแล้วเพิ่มใหม่ → 201)
+✅ CP52 production ไม่ตั้ง JWT_SECRET → ระบบไม่ยอม start
+✅ CP52 production: error ไม่ส่ง stack trace ให้ผู้ใช้
+✅ CP52 .env.example มี JWT_SECRET ค่าว่าง และ .gitignore มี .env (ไม่ commit ค่าลับ)
+✅ CP52 npm test ใน api ผ่านทุกข้อ และมี test ของ 401 กับ 403
+✅ CHAL ⭐ มี security header (X-Content-Type-Options: nosniff)
+✅ CHAL ⭐ ผิดเกิน 5 ครั้ง → 429 (จำกัดการเดารหัสผ่าน)
+✅ CHAL ⭐ frontend แนบ Authorization: Bearer ทุกคำขอ (ทำต่อใน Term Project)
+✅ CHAL ⭐ render.yaml ให้ Render สร้าง JWT_SECRET (generateValue)
+
+──────────────────────────────────────────────────────────
+🏫 ในห้อง (CP48–CP52)   ผ่าน 23/23 รายการ
+⭐ Challenge            ผ่าน 4/4 รายการ
+──────────────────────────────────────────────────────────
+ผ่าน 27/27 รายการ
+
+หมายเหตุ: checker ตรวจพฤติกรรมด้านความปลอดภัยได้ แต่ตรวจไม่ได้ว่าเข้าใจเหตุผล
+ผู้สอนจะถามว่า 401 ต่างจาก 403 อย่างไร และทำไมต้อง hash รหัสผ่าน
+</pre></details></main></body></html>

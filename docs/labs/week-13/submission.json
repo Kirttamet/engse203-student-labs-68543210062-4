@@ -1,0 +1,16 @@
+{
+  "week": "week-13",
+  "title": "Quality & Security",
+  "status": "ready",
+  "sourceOrigin": "course-starter",
+  "originalRepoUrl": "",
+  "originalCommit": "",
+  "pullRequestUrl": "",
+  "submissionTag": "lab-13-submission-v1",
+  "testStatus": "pass",
+  "notes": "Checker 27/27; API 71 tests + frontend 6; coverage 87.5%; Week12 regression 20/20; production audit 0; ยังไม่ commit/push/PR/tag หรือ deploy จริง",
+  "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-13/",
+  "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-13/labs/week-13/source",
+  "hasPublish": true,
+  "sourceEntries": 19
+}
