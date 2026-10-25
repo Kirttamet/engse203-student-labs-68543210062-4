@@ -1,0 +1,13 @@
+{
+  "week": "week-11",
+  "title": "Full-Stack Integration",
+  "status": "ready",
+  "sourceOrigin": "course-starter",
+  "originalRepoUrl": "",
+  "originalCommit": "",
+  "pullRequestUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/pull/8",
+  "submissionTag": "",
+  "testStatus": "pass",
+  "deployedUrl": "https://campus-service-68543210062-4.onrender.com/",
+  "notes": "Source เดิมจาก PR #8; frontend build และ API tests 8 ข้อผ่าน; เพิ่มลิงก์ Render ใน Hub โดยไม่แก้ source"
+}
