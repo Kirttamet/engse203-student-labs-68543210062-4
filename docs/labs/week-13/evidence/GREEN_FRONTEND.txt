@@ -1,0 +1,13 @@
+
+> engse203-week05-campus-service-request@0.3.0 test
+> vitest run
+
+
+ RUN  v5.0.3 C:/GG/PP/engse203-student-labs-68543210062-4/labs/week-13/source/frontend
+
+
+ Test Files  2 passed (2)
+      Tests  6 passed (6)
+   Start at  02:13:02
+   Duration  208ms (transform 52%, tests 22%, import 19%, worker 6%)
+

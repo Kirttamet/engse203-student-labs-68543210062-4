@@ -1,0 +1,189 @@
+
+> engse203-campus-api@3.2.0 test
+> vitest run
+
+
+ RUN  v5.0.3 C:/Users/oommy/Desktop/projet 20 for ai/lab13-work/source/api
+
+ ❯ tests/unit/password.test.js (10 tests | 10 failed) 9ms
+   ❯ hashPassword (3)
+     × รูปแบบ scrypt$salt$hash 5ms
+     × รหัสผ่านเดียวกัน hash 2 ครั้ง ได้ไม่เหมือนกัน (salt สุ่ม) 1ms
+     × hash ไม่มีรหัสผ่านตัวจริงปนอยู่ 0ms
+   ❯ verifyPassword (7)
+     × รหัสผ่านถูก → true 0ms
+     × รหัสผ่านผิด → false 0ms
+     × ตรวจ hash ของบัญชีเจ้าหน้าที่ใน schema.sql ได้ 0ms
+     × hash ผิดรูปแบบ undefined → false (ไม่พัง) 0ms
+     × hash ผิดรูปแบบ "" → false (ไม่พัง) 0ms
+     × hash ผิดรูปแบบ "plain-text" → false (ไม่พัง) 0ms
+     × hash ผิดรูปแบบ "md5$abc$def" → false (ไม่พัง) 0ms
+stdout | tests/integration/auth.api.test.js > สิทธิ์ของ PUT / DELETE > ไม่มี token → 401
+[status] REQ-001 → completed
+
+ ❯ tests/integration/auth.api.test.js (3 tests | 3 failed) 74ms
+   ❯ POST /api/auth/login (2)
+     × อีเมลและรหัสผ่านถูก → 200 พร้อม token 57ms
+     × รหัสผ่านผิด → 401 8ms
+   ❯ สิทธิ์ของ PUT / DELETE (1)
+     × ไม่มี token → 401 7ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 13 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/auth.api.test.js > POST /api/auth/login > อีเมลและรหัสผ่านถูก → 200 พร้อม token
+AssertionError: expected 404 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 404
+
+ ❯ tests/integration/auth.api.test.js:17:22
+     15|   test('อีเมลและรหัสผ่านถูก → 200 พร้อม token', async () => {
+     16|     const r = await request(app).post('/api/auth/login').send(STAFF);
+     17|     expect(r.status).toBe(200);
+       |                      ^
+     18|     expect(r.body.token.split('.')).toHaveLength(3);
+     19|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/13]⎯
+
+ FAIL  tests/integration/auth.api.test.js > POST /api/auth/login > รหัสผ่านผิด → 401
+AssertionError: expected 404 to be 401 // Object.is equality
+
+- Expected
++ Received
+
+- 401
++ 404
+
+ ❯ tests/integration/auth.api.test.js:22:22
+     20|   test('รหัสผ่านผิด → 401', async () => {
+     21|     const r = await request(app).post('/api/auth/login').send({ ...STA…
+     22|     expect(r.status).toBe(401);
+       |                      ^
+     23|   });
+     24|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/13]⎯
+
+ FAIL  tests/integration/auth.api.test.js > สิทธิ์ของ PUT / DELETE > ไม่มี token → 401
+AssertionError: expected 200 to be 401 // Object.is equality
+
+- Expected
++ Received
+
+- 401
++ 200
+
+ ❯ tests/integration/auth.api.test.js:31:22
+     29|   test('ไม่มี token → 401', async () => {
+     30|     const r = await request(app).put('/api/requests/REQ-001').send({ s…
+     31|     expect(r.status).toBe(401);
+       |                      ^
+     32|   });
+     33|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/13]⎯
+
+ FAIL  tests/unit/password.test.js > hashPassword > รูปแบบ scrypt$salt$hash
+Error: TODO W13-HASH: ยังไม่ได้เขียน hashPassword
+ ❯ hashPassword src/utils/password.js:19:9
+     17| export function hashPassword(plain) {
+     18|   // TODO: สุ่ม salt → scryptSync → คืน `scrypt$${salt}$${hash}`
+     19|   throw new Error('TODO W13-HASH: ยังไม่ได้เขียน hashPassword');
+       |         ^
+     20| }
+     21|
+ ❯ tests/unit/password.test.js:9:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/13]⎯
+
+ FAIL  tests/unit/password.test.js > hashPassword > รหัสผ่านเดียวกัน hash 2 ครั้ง ได้ไม่เหมือนกัน (salt สุ่ม)
+Error: TODO W13-HASH: ยังไม่ได้เขียน hashPassword
+ ❯ hashPassword src/utils/password.js:19:9
+     17| export function hashPassword(plain) {
+     18|   // TODO: สุ่ม salt → scryptSync → คืน `scrypt$${salt}$${hash}`
+     19|   throw new Error('TODO W13-HASH: ยังไม่ได้เขียน hashPassword');
+       |         ^
+     20| }
+     21|
+ ❯ tests/unit/password.test.js:12:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/13]⎯
+
+ FAIL  tests/unit/password.test.js > hashPassword > hash ไม่มีรหัสผ่านตัวจริงปนอยู่
+Error: TODO W13-HASH: ยังไม่ได้เขียน hashPassword
+ ❯ hashPassword src/utils/password.js:19:9
+     17| export function hashPassword(plain) {
+     18|   // TODO: สุ่ม salt → scryptSync → คืน `scrypt$${salt}$${hash}`
+     19|   throw new Error('TODO W13-HASH: ยังไม่ได้เขียน hashPassword');
+       |         ^
+     20| }
+     21|
+ ❯ tests/unit/password.test.js:15:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/13]⎯
+
+ FAIL  tests/unit/password.test.js > verifyPassword > รหัสผ่านถูก → true
+Error: TODO W13-HASH: ยังไม่ได้เขียน hashPassword
+ ❯ hashPassword src/utils/password.js:19:9
+     17| export function hashPassword(plain) {
+     18|   // TODO: สุ่ม salt → scryptSync → คืน `scrypt$${salt}$${hash}`
+     19|   throw new Error('TODO W13-HASH: ยังไม่ได้เขียน hashPassword');
+       |         ^
+     20| }
+     21|
+ ❯ tests/unit/password.test.js:21:39
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/13]⎯
+
+ FAIL  tests/unit/password.test.js > verifyPassword > รหัสผ่านผิด → false
+Error: TODO W13-HASH: ยังไม่ได้เขียน hashPassword
+ ❯ hashPassword src/utils/password.js:19:9
+     17| export function hashPassword(plain) {
+     18|   // TODO: สุ่ม salt → scryptSync → คืน `scrypt$${salt}$${hash}`
+     19|   throw new Error('TODO W13-HASH: ยังไม่ได้เขียน hashPassword');
+       |         ^
+     20| }
+     21|
+ ❯ tests/unit/password.test.js:24:39
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/13]⎯
+
+ FAIL  tests/unit/password.test.js > verifyPassword > ตรวจ hash ของบัญชีเจ้าหน้าที่ใน schema.sql ได้
+Error: TODO W13-HASH: ยังไม่ได้เขียน verifyPassword
+ ❯ verifyPassword src/utils/password.js:27:9
+     25|   //       → เทียบด้วย timingSafeEqual (ไม่ใช่ ===)  ← ทำไม? อ่านเอกสา…
+     26|   //       hash ผิดรูปแบบ → คืน false (ห้ามโยน error)
+     27|   throw new Error('TODO W13-HASH: ยังไม่ได้เขียน verifyPassword');
+       |         ^
+     28| }
+     29|
+ ❯ tests/unit/password.test.js:27:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/13]⎯
+
+ FAIL  tests/unit/password.test.js > verifyPassword > hash ผิดรูปแบบ undefined → false (ไม่พัง)
+ FAIL  tests/unit/password.test.js > verifyPassword > hash ผิดรูปแบบ "" → false (ไม่พัง)
+ FAIL  tests/unit/password.test.js > verifyPassword > hash ผิดรูปแบบ "plain-text" → false (ไม่พัง)
+ FAIL  tests/unit/password.test.js > verifyPassword > hash ผิดรูปแบบ "md5$abc$def" → false (ไม่พัง)
+Error: TODO W13-HASH: ยังไม่ได้เขียน verifyPassword
+ ❯ verifyPassword src/utils/password.js:27:9
+     25|   //       → เทียบด้วย timingSafeEqual (ไม่ใช่ ===)  ← ทำไม? อ่านเอกสา…
+     26|   //       hash ผิดรูปแบบ → คืน false (ห้ามโยน error)
+     27|   throw new Error('TODO W13-HASH: ยังไม่ได้เขียน verifyPassword');
+       |         ^
+     28| }
+     29|
+ ❯ tests/unit/password.test.js:30:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/13]⎯
+
+
+ Test Files  2 failed | 2 passed (4)
+      Tests  13 failed | 43 passed (56)
+   Start at  02:07:35
+   Duration  6.69s (import 88%, transform 6%, tests 5%, worker 1%)
+

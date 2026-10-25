@@ -1,0 +1,13 @@
+
+> engse203-campus-api@3.2.0 test
+> vitest run
+
+
+ RUN  v5.0.3 C:/Users/oommy/Desktop/projet 20 for ai/lab13-work/source/api
+
+
+ Test Files  5 passed (5)
+      Tests  71 passed (71)
+   Start at  02:08:46
+   Duration  1.75s (tests 56%, import 32%, transform 11%, worker 1%)
+

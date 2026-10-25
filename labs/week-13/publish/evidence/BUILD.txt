@@ -1,0 +1,14 @@
+
+> engse203-week05-campus-service-request@0.3.0 build
+> vite build
+
+vite v8.1.5 building client environment for production...
+[2K
+transforming...✓ 43 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.51 kB │ gzip:  0.32 kB
+dist/assets/index-UUV2Pq6a.css    4.79 kB │ gzip:  1.72 kB
+dist/assets/index-CmbZA-Ci.js   252.47 kB │ gzip: 79.70 kB
+
+✓ built in 721ms
