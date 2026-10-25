@@ -1,0 +1,16 @@
+{
+  "week": "week-10",
+  "title": "Node.js & SQLite",
+  "status": "submitted",
+  "sourceOrigin": "course-starter",
+  "originalRepoUrl": "",
+  "originalCommit": "",
+  "pullRequestUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/pull/12",
+  "submissionTag": "lab-10-submission-v1",
+  "testStatus": "pass",
+  "notes": "PR #12 merge แล้ว; tag lab-10-submission-v1 ชี้ merge commit แล้ว; รอบนี้แก้ metadata และ Pages ที่ยังไม่รวมใน tag เดิม ยังไม่ deploy backend จริง",
+  "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-10/",
+  "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-10/labs/week-10/source",
+  "hasPublish": true,
+  "sourceEntries": 13
+}

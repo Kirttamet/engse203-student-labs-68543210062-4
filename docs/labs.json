@@ -13,7 +13,7 @@
     "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-01/",
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-01/labs/week-01/source",
     "hasPublish": false,
-    "sourceEntries": 5
+    "sourceEntries": 6
   },
   {
     "week": "week-02",
@@ -29,7 +29,7 @@
     "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-02/",
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-02/labs/week-02/source",
     "hasPublish": true,
-    "sourceEntries": 8
+    "sourceEntries": 10
   },
   {
     "week": "week-03",
@@ -45,7 +45,7 @@
     "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-03/",
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-03/labs/week-03/source",
     "hasPublish": true,
-    "sourceEntries": 5
+    "sourceEntries": 8
   },
   {
     "week": "week-04",
@@ -61,7 +61,7 @@
     "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-04/",
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-04/labs/week-04/source",
     "hasPublish": true,
-    "sourceEntries": 11
+    "sourceEntries": 12
   },
   {
     "week": "week-05",
@@ -77,7 +77,7 @@
     "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-05/",
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-05/labs/week-05/source",
     "hasPublish": true,
-    "sourceEntries": 10
+    "sourceEntries": 11
   },
   {
     "week": "week-06",
@@ -126,5 +126,37 @@
     "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-09/labs/week-09/source",
     "hasPublish": false,
     "sourceEntries": 6
+  },
+  {
+    "week": "week-10",
+    "title": "Node.js & SQLite",
+    "status": "submitted",
+    "sourceOrigin": "course-starter",
+    "originalRepoUrl": "",
+    "originalCommit": "",
+    "pullRequestUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/pull/12",
+    "submissionTag": "lab-10-submission-v1",
+    "testStatus": "pass",
+    "notes": "PR #12 merge แล้ว; tag lab-10-submission-v1 ชี้ merge commit แล้ว; รอบนี้แก้ metadata และ Pages ที่ยังไม่รวมใน tag เดิม ยังไม่ deploy backend จริง",
+    "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-10/",
+    "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-10/labs/week-10/source",
+    "hasPublish": true,
+    "sourceEntries": 13
+  },
+  {
+    "week": "week-12",
+    "title": "Testing & Debugging",
+    "status": "submitted",
+    "sourceOrigin": "course-starter",
+    "originalRepoUrl": "",
+    "originalCommit": "",
+    "pullRequestUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/pull/13",
+    "submissionTag": "lab-12-submission-v1",
+    "testStatus": "pass",
+    "notes": "ชุดในเครื่องผ่าน checker 22/22; เปิด PR #13 แล้วและยังไม่ merge; tag lab-12-submission-v1 เป็นชื่อที่เตรียมไว้ ยังไม่ได้สร้าง; ยังไม่ deploy backend",
+    "pageUrl": "https://Kirttamet.github.io/engse203-student-labs-68543210062-4/labs/week-12/",
+    "sourceUrl": "https://github.com/Kirttamet/engse203-student-labs-68543210062-4/tree/lab/week-12/labs/week-12/source",
+    "hasPublish": true,
+    "sourceEntries": 17
   }
 ]

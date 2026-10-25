@@ -33,9 +33,9 @@ Unit tests ครอบคลุมชนิดข้อมูล ค่า enum
 
 ## Pages และการส่งงาน
 
-source/ เก็บโค้ด; evidence/ เก็บผลจริง; publish/ เป็นรายงาน static สำหรับ GitHub Pages. Express/SQLite ไม่สามารถรันบน GitHub Pages ได้ จึงต้องใช้ npm run dev หรือ Node host เพื่อใช้งาน full-stack. ยังไม่ deploy URL จริงหรือสร้าง PR/tag
+source/ เก็บโค้ด; evidence/ เก็บผลจริง; publish/ เป็นรายงาน static สำหรับ GitHub Pages. Express/SQLite ไม่สามารถรันบน GitHub Pages ได้ จึงต้องใช้ npm run dev หรือ Node host เพื่อใช้งาน full-stack. เปิด PR #13 แล้ว แต่ยังไม่ deploy URL จริงหรือสร้าง tag
 
-การ build Pages ใน main รุ่นปัจจุบันยังติด Week11 ที่ไม่มี metadata. ต้อง merge branch fix/week-10-v2 ที่ซ่อม builder ก่อน จึงใช้ npm run build:pages -- --week week-12 ได้. ไม่แก้ metadata ของ Week11 เพื่อหลบ error
+PR #14 ซ่อม Pages builder และ merge เข้า main แล้ว. ใช้ npm run build:pages -- --week week-12 เพื่อสร้าง Hub และหน้า LAB12 โดยรักษาหน้า LAB อื่นไว้. Week11 ที่ยังไม่มี metadata จะถูกข้าม
 
 ## References & AI Assistance
 
